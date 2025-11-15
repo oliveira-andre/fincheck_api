@@ -1,4 +1,4 @@
-import { Controller, Post, Body, SetMetadata } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
 
 import { IsPublic } from 'src/shared/decorators/isPublic';
 
