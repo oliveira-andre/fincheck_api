@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Put, Param, Delete, ParseUUIDPipe, HttpCod
 import { BankAccountsService } from './services/bank-accounts.service';
 import { CreateBankAccountDto } from './dto/create-bank-account.dto';
 import { UpdateBankAccountDto } from './dto/update-bank-account.dto';
-import { ActiveUserId } from 'src/shared/decorators/activeUserId';
+import { ActiveUserId } from '../../../src/shared/decorators/activeUserId';
 
 @Controller('bank-accounts')
 export class BankAccountsController {

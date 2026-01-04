@@ -16,9 +16,9 @@ import {
 import { TransactionsService } from './services/transactions.service';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { UpdateTransactionDto } from './dto/update-transaction.dto';
-import { ActiveUserId } from 'src/shared/decorators/activeUserId';
-import { OptionalParseUUIDPipe } from 'src/shared/pipes/OptionalParseUUIDPipe';
-import { OptionalParseEnumPipe } from 'src/shared/pipes/OptionalParseEnumPipe';
+import { ActiveUserId } from '../../../src/shared/decorators/activeUserId';
+import { OptionalParseUUIDPipe } from '../../../src/shared/pipes/OptionalParseUUIDPipe';
+import { OptionalParseEnumPipe } from '../../../src/shared/pipes/OptionalParseEnumPipe';
 import { TransactionType } from './entities/Transaction';
 
 @Controller('transactions')

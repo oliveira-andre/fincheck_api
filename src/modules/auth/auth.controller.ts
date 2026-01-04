@@ -1,6 +1,6 @@
 import { Controller, Post, Body } from '@nestjs/common';
 
-import { IsPublic } from 'src/shared/decorators/isPublic';
+import { IsPublic } from '../../../src/shared/decorators/isPublic';
 
 import { AuthService } from './auth.service';
 
