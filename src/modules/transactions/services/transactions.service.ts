@@ -34,9 +34,13 @@ export class TransactionsService {
     });
   }
 
-  findAllByUserId(userId: string, filters: { month: number, year: number, bankAccountId?: string, type?: TransactionType }) {
+  findAllByUserId(userId: string, filters: { month: number, year: number, bankAccountId?: string, categoryId?: string, type?: TransactionType }) {
     if (filters?.bankAccountId?.length === 0) {
       filters.bankAccountId = undefined;
+    }
+
+    if (filters?.categoryId?.length === 0) {
+      filters.categoryId = undefined;
     }
 
     if (filters?.type?.length === 0) {
@@ -47,6 +51,7 @@ export class TransactionsService {
       where: {
         userId,
         bankAccountId: filters.bankAccountId,
+        categoryId: filters.categoryId,
         type: filters.type,
         date: {
           gte: new Date(Date.UTC(filters.year, filters.month)),
