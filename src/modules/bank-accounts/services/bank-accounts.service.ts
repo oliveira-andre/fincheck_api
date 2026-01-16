@@ -29,6 +29,7 @@ export class BankAccountsService {
   async findAllByUserId(userId: string) {
     const bankAccounts = await this.bankAccountsRepo.findMany({
       where: { userId },
+      orderBy: { createdAt: 'asc' },
       include: {
         transactions: {
           select: {
@@ -36,7 +37,7 @@ export class BankAccountsService {
             value: true,
           }
         },
-      }
+      },
     });
 
     return bankAccounts.map(({ transactions, ...bankAccount }) => {

@@ -58,6 +58,7 @@ export class TransactionsService {
           lt: new Date(Date.UTC(filters.year, filters.month + 1)),
         }
       },
+      orderBy: { createdAt: 'asc' },
       include: {
         category: {
           select: {
@@ -66,7 +67,7 @@ export class TransactionsService {
             icon: true,
           }
         },
-      }
+      },
     });
   }
 

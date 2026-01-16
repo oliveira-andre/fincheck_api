@@ -23,6 +23,7 @@ export class CategoriesService {
 
     return this.categoriesRepo.findMany({
       where: { userId, bankAccountId },
+      orderBy: { createdAt: 'asc' },
     });
   }
 
