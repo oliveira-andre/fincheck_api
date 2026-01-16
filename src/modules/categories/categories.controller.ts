@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete, Query } from '@nestjs/common';
 import { CategoriesService } from './services/categories.service';
 import { ActiveUserId } from '../../../src/shared/decorators/activeUserId';
 import { CreateCategoryDto } from './dto/create-category.dto';
@@ -32,7 +32,7 @@ export class CategoriesController {
   //   return this.categoriesService.findOne(+id);
   // }
 
-  @Patch(':categoryId')
+  @Put(':categoryId')
   update(
     @ActiveUserId() userId: string,
     @Param('categoryId', ParseUUIDPipe) categoryId: string,
